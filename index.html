@@ -1,12 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+         footer {
+            background: -webkit-linear-gradient(right,#003366,#004080,#0059b3,#0073e6);
+            
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position:relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Copyright Text Styles */
+        .copyright {
+            font-size: 14px;
+        }
+
+        .dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>News App</title>
     <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
 
@@ -21,16 +56,84 @@
                     <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Bollywood</li>
+                    <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')">Technology</li>
+                    <li class="hover-link nav-item" id="Food" onclick="onNavItemClick('Food')">Food</li>
+        
+                    <!---     <li class="hover-link nav-item" id="States"><a href="nav.html">States</a></li>
+                       
+                      
 
-                </ul>
+                \ <li class="hover-link nav-item" id="Madhya Pradesh" onclick="onNavItemClick('Madhya Pradesh')">Madhya Pradesh</li> 
+                    <li class="hover-link nav-item" id="Uttar Pradesh" onclick="onNavItemClick('Uttar Pradesh')">Uttar Pradesh</li> 
+                    <li class="hover-link nav-item" id="Bihar" onclick="onNavItemClick('Bihar')">Bihar</li> 
+                    <li class="hover-link nav-item" id="Delh" onclick="onNavItemClick('Delhi')">Delhi</li> 
+                    <li class="hover-link nav-item" id="Himachal Pradesh" onclick="onNavItemClick('Himachal Pradesh')">Himachal Pradesh</li> 
+                    <li class="hover-link nav-item" id="Haryana" onclick="onNavItemClick('Haryana')">Haryana</li> 
+                -->
+
+             </ul>
             </div>
             <div class="search-bar flex">
-                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
-                <button id="search-button" class="search-button">Search</button>
+         <!---- <input id="search-text" type="text"  list="stateandcities" class="news-input" placeholder="e.g. Science"> -->
+          <input id="search-text"  type="text"  list="search-option" class="news-input" placeholder="e.g. Science"> 
+              <datalist id="search-option">
+                    <option value="state City">state City</option>
+                    <option value="DB Original">DB Original</option>
+                    <option value="explainer">explainer</option>
+                    <option value="Bollywood">Bollywood</option>
+                    <option value="life mantra">life mantra</option>
+                    <option value="magazine">magazine</option>
+                    <option value="Fake news expose">Fake news expose</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Business">Business</option>
+                    <option value="Country">Country</option>
+                    <option value="Foreign">Foreign</option>
+                    <option value="utility">utility</option>
+                    <option value="Life-Science">Life-Science</option>
+                    <option value="tech-auto">tech-auto</option>
+                    <option value="woman">woman</option>
+                    <option value="JobEducation">Job - Education</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Himachal">Himachal</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="jodhpur">jodhpur</option>
+                    <option value="Gwalior">Gwalior</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Sikar">Sikar</option>
+                    <option value="quota">quota</option>
+                    <option value="Raipur">Raipur</option>
+                    <option value="Jabalpur">Jabalpur</option>
+                
+                </datalist>
+              
+                <button id="search-button" class="search-button">Search</button>  
             </div>
+            <div id="google_translate_element"></div>  
+            
+
         </div>
     </nav>
+
+
+
     
+
+ 
+ 
 
     <main>
         <div class="cards-container container flex" id="cards-container">
@@ -49,8 +152,69 @@
                 <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
             </div>
         </div>
+
+
+
     </template>
 
+
+
+
+    <!-- <FRAMESET cols="20%>
+        <FRAMESET rows="100">
+            <FRAME src="contents_of_frame1.html">
+           
+        </FRAMESET>
+        <FRAME src="contents_of_frame3.html">
+        <NOFRAMES>
+            <P>This frameset document contains:
+            <UL>
+               <LI><A href="contents_of_frame1.html">Some neat contents</A>
+               <LI><IMG src="contents_of_frame2.gif" alt="A neat image">
+               <LI><A href="contents_of_frame3.html">Some other neat contents</A>
+            </UL>
+        </NOFRAMES>
+      </FRAMESET> -->
+
+
+
+
+    
+    <footer>
+        <div class="copyright">
+            &copy; 2024 A-Z News Website. All Rights Reserved.
+            <ul>
+                <li>
+                    <a href="contact.html" > <li class="hover-link nav-item">Contact Us</li> </a>
+                 <!---  <a href="signup.html" > <li class="hover-link nav-item">Login/Sign-Up</li> </a>  --> 
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+
+
     <script src="script.js"></script>
+
+    <!-- function which will translate the web page using google translator -->  
+  
+    <script type="text/javascript">  
+        function googleTranslateElementInit() {  
+            new google.translate.TranslateElement(  
+                {pageLanguage: 'en'},  
+                'google_translate_element'  
+            );  
+        }  
+    </script>  
+  
+<!-- Script code for google translator API -->  
+    <script type="text/javascript"   
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">  
+    </script>  
+
 </body>
-</html> 
+</html>
